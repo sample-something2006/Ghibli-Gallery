@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #f8efe6, #e0f7fa);
+    padding: 30px 20px;
+    overflow-x: hidden;
+    color: #333;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #5a4e4d;
+    text-shadow: 2px 2px #e8d5c4;
+    animation: fadeInDown 1s ease forwards;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 10px;
+  }
+  
+  .image-card {
+    background: #fffef9;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(0px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+  }
+  
+  .image-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  .image-card::before {
+    content: "";
+    position: absolute;
+    top: -75%;
+    left: -75%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.5));
+    transform: rotate(25deg);
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  
+  .image-card:hover::before {
+    top: -50%;
+    left: -50%;
+  }
+  
+  .image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  
+  .image-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

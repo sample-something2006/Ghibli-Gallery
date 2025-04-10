@@ -17,7 +17,7 @@ const images = [
     card.innerHTML = `
       <div class="card-inner">
         <div class="card-front">?</div>
-        <div class="card-back"><img src="images/${img}" /></div>
+        <div class="card-back"><img src="${img}" /></div>
       </div>`;
     board.appendChild(card);
   
@@ -51,7 +51,7 @@ const images = [
   function populateScrollImages() {
     for (let i = 0; i < 50; i++) {
       const img = document.createElement("img");
-      img.src = `images/${images[i % images.length]}`;
+      img.src = `${images[i % images.length]}`;
       img.className = "scroll-img";
       scrollWrapper.appendChild(img);
     }
